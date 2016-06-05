@@ -448,10 +448,9 @@ body .demo-blog {
 .demo-blog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('../img/avatar.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 100%;
   border-radius: 22px;
   background-color: #F5F5F5;
 }

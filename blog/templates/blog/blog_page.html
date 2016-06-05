@@ -15,7 +15,7 @@
                 <h3>{{ self.title }}</h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-              <div class="minilogo"></div>
+                <div class="minilogo" style="background-image: url({{ self.author.get_gravatar_link }})"></div>
               <div>
                   <strong>{{ self.author }}</strong>
                   <span>{{ self.date }}</span>
