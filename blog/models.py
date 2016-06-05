@@ -243,6 +243,10 @@ class BlogPage(Page):
         # Find closest ancestor which is a blog index
         return self.get_ancestors().type(BlogIndexPage).last()
 
+    @property
+    def get_index_url(self):
+        return self.get_blog_index().url
+
     def get_context(self, request, *args, **kwargs):
         context = super(BlogPage, self).get_context(request, *args, **kwargs)
         context['blogs'] = self.get_blog_index().blogindexpage.blogs
