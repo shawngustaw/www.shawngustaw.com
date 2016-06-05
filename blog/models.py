@@ -20,6 +20,9 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailsnippets.models import register_snippet
 
+from customusers.models import User
+
+
 COMMENTS_APP = getattr(settings, 'COMMENTS_APP', None)
 
 
@@ -93,10 +96,13 @@ class BlogIndexPage(Page):
             except EmptyPage:
                 blogs = paginator.page(paginator.num_pages)
 
+        blog_owner = User.objects.filter(is_owner=True).first()
+
         context['blogs'] = blogs
         context['category'] = category
         context['tag'] = tag
         context['author'] = author
+        context['blog_owner'] = blog_owner
         context['COMMENTS_APP'] = COMMENTS_APP
         context = get_blog_context(context)
 
