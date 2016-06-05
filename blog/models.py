@@ -247,6 +247,18 @@ class BlogPage(Page):
     def get_index_url(self):
         return self.get_blog_index().url
 
+    @property
+    def get_next_post(self):
+        sibling = self.get_next_sibling()
+        url = sibling.url if sibling else None
+        return url
+
+    @property
+    def get_previous_post(self):
+        sibling = self.get_prev_sibling()
+        url = sibling.url if sibling else None
+        return url
+
     def get_context(self, request, *args, **kwargs):
         context = super(BlogPage, self).get_context(request, *args, **kwargs)
         context['blogs'] = self.get_blog_index().blogindexpage.blogs
