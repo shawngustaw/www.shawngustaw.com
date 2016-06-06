@@ -1,2 +1,15 @@
-Django>=1.9,<1.10
+beautifulsoup4==4.4.1
+Django==1.9.7
+django-modelcluster==2.0
+django-taggit==0.18.3
+django-treebeard==4.0.1
+djangorestframework==3.3.3
+html5lib==0.9999999
+Pillow==3.2.0
+psycopg2==2.6.1
+pytz==2016.4
+six==1.10.0
+Unidecode==0.4.19
+uWSGI==2.0.13.1
 wagtail==1.5
+Willow==0.3.1
