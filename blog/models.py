@@ -20,7 +20,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailsnippets.models import register_snippet
 
-from customusers.models import User
+from accounts.models import User
 
 
 COMMENTS_APP = getattr(settings, 'COMMENTS_APP', None)

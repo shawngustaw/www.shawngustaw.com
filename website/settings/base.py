@@ -18,7 +18,7 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-AUTH_USER_MODEL = 'customusers.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'blog',
-    'customusers',
+    'accounts',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
