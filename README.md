@@ -1,3 +1,3 @@
 ## Personal Blog
 
-Source code for www.shawns.website written in Django using Wagtail. 
+Source code for www.shawngustaw.com written in Django using Wagtail. 
