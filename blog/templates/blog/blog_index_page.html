@@ -14,7 +14,7 @@
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
                 <div class="minilogo" style="background-image: url({{blogs.0.author.get_gravatar_link }})"></div>
               <div>
-                  <strong>{{ blogs.0.author }}</strong>
+                  <strong>{{ blogs.0.author | capfirst }}</strong>
                   <span>{{ blogs.0.date }}</span>
               </div>
             </div>
@@ -60,7 +60,7 @@
                     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
                         <div class="minilogo" style="background-image: url({{ blog.author.get_gravatar_link}})"></div>
                       <div>
-                        <strong>{{ blog.author }}</strong>
+                        <strong>{{ blog.author | capfirst }}</strong>
                         <span>{{ blog.date }}</span>
                       </div>
                     </div>
