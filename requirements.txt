@@ -13,3 +13,4 @@ Unidecode==0.4.19
 uWSGI==2.0.13.1
 wagtail==1.5
 Willow==0.3.1
+django-extensions-1.6.7
