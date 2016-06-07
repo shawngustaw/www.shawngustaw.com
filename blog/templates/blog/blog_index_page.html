@@ -2,11 +2,13 @@
 {% load static wagtailuserbar wagtailcore_tags wagtailimages_tags %}
 
 {% block body %}
+
+    {% image blogs.0.header_image fill-400x400 as header_image %}
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
           <div class="mdl-card mdl-cell mdl-cell--8-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
+              <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url({{ header_image.url }})">
                 <h3><a href="{% pageurl blogs.0 %}">{{ blogs.0.title }}</a></h3>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
