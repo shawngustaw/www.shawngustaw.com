@@ -25,13 +25,7 @@ class User(AbstractUser):
         avatar_url += urllib.urlencode({'d': default, 's': str(size)})
         return avatar_url
 
-    def clean(self):
-        super(User, self).clean()
-
-        if self.is_owner:
-            if User.objects.filter(is_owner=True):
-                raise ValidationError("Only one global blog owner allowed.")
-
-    def save(self, *args, **kwargs):
-        self.full_clean()
-        super(User, self).save(*args, **kwargs)
+    def clean_is_owner(self):
+        if (self.is_owner and User.objects.filter(is_owner=True)
+                                          .exclude(pk=self.pk)):
+            raise ValidationError("Only one global blog owner allowed.")
