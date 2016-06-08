@@ -4,6 +4,7 @@ import hashlib
 import urllib
 
 from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
 from django.db.models.fields import BooleanField
 
 
@@ -23,3 +24,14 @@ class User(AbstractUser):
         size = 200
         avatar_url += urllib.urlencode({'d': default, 's': str(size)})
         return avatar_url
+
+    def clean(self):
+        super(User, self).clean()
+
+        if self.is_owner:
+            if User.objects.filter(is_owner=True):
+                raise ValidationError("Only one global blog owner allowed.")
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super(User, self).save(*args, **kwargs)

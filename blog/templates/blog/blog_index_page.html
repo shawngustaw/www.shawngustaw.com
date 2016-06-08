@@ -21,10 +21,13 @@
           </div>
 
           <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
+              {% if user.is_authenticated %}
+              <!--  TODO:  Get link to parent index and redirect to add new blog page -->
+            <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" onclick="window.open('example.com','_blank');"; >
               <i class="material-icons mdl-color-text--white" role="presentation">add</i>
               <span class="visuallyhidden">add</span>
             </button>
+            {% endif %}
             <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
                 <img src="{{ blog_owner.get_gravatar_link }}">
             </div>
