@@ -198,7 +198,7 @@ def limit_author_choices():
 class BlogPage(Page):
     body = RichTextField(verbose_name=_('body'))
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
-    date = models.DateField(
+    date = models.DateTimeField(
         _("Post date"), default=datetime.datetime.today,
         help_text=_("This date may be displayed on the blog post. It is not "
                     "used to schedule posts to go live at a later date.")
