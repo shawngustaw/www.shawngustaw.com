@@ -23,7 +23,7 @@
           <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
               {% if user.is_authenticated %}
               <!--  TODO:  Get link to parent index and redirect to add new blog page -->
-            <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" onclick="window.open('example.com','_blank');"; >
+              <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" onclick="window.open('/admin/pages/add/blog/blogpage/' + {{ self.pk }});"; >
               <i class="material-icons mdl-color-text--white" role="presentation">add</i>
               <span class="visuallyhidden">add</span>
             </button>
