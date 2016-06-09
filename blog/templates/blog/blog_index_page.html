@@ -74,15 +74,32 @@
             <b>no blogs<b><br><br>
         {% endif %}
 
-
           <nav class="demo-nav mdl-cell mdl-cell--12-col">
+            {% if blogs.has_previous and blogs.number != 1 %}
+            <a href="?page={{ blogs.previous_page_number }}" class="demo-nav__button" title="show newer">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_back</i>
+              </button>
+              Newer
+            </a>
+            
+            {% endif %}
             <div class="section-spacer"></div>
-            <a href="entry.html" class="demo-nav__button" title="show more">
+            {% if blogs.has_next and blogs.number == 1 %}
+            <a href="?page={{ blogs.next_page_number }}" class="demo-nav__button" title="show more">
               More
               <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                 <i class="material-icons" role="presentation">arrow_forward</i>
               </button>
             </a>
+            {% elif blogs.has_next and blogs.number != 1%}
+            <a href="?page={{ blogs.next_page_number }}" class="demo-nav__button" title="show older">
+                Older
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_forward</i>
+              </button>
+            </a>
+            {% endif %}
           </nav>
         </div>
         <footer class="mdl-mini-footer">
