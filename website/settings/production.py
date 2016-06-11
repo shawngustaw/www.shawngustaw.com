@@ -30,10 +30,21 @@ EMAIL_BACKEND = 'django_ses.SESBackend'
 SERVER_EMAIL = "errors@shawngustaw.com"
 DEFAULT_FROM_EMAIL = "me@shawngustaw.com"
 
+# AWS Email backend config
 AWS_ACCESS_KEY_ID = get_env_variable("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = get_env_variable("AWS_SECRET_ACCESS_KEY")
 AWS_SES_REGION_NAME = 'us-east-1'
 AWS_SES_REGION_ENDPOINT = 'email.us-east-1.amazonaws.com'
+
+# Increased security for prod
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+X_FRAME_OPTIONS = "DENY"
 
 DATABASES = {
 	'default': {
