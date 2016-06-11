@@ -16,6 +16,16 @@
               <div>
                   <strong>{{ blogs.0.author | capfirst }}</strong>
                   <span>{{ blogs.0.date }}</span>
+                  {% if blogs.0.tags.all %}
+                  <div id="tags">
+                      {% for tag in blogs.0.tags.all %}
+                        <div style=
+                        "display: inline; color: #757575; font-weight: 300; border-radius: 2px; border: 1px #757575 solid; font-size: .8em; padding: 2px 4px; margin-right: 3px; width: fit-content;">
+                        {{ tag }}
+                        </div>
+                      {% endfor %}
+                  </div>
+                  {% endif %}
               </div>
             </div>
           </div>
@@ -64,6 +74,16 @@
                       <div>
                         <strong>{{ blog.author | capfirst }}</strong>
                         <span>{{ blog.date }}</span>
+                          {% if blog.tags.all %}
+                          <div id="tags">
+                            {% for tag in blog.tags.all %}
+                            <div style=
+                            "display: inline; color: #757575; font-weight: 300; border-radius: 2px; border: 1px #757575 solid; font-size: .8em; padding: 2px 4px; margin-right: 3px; width: fit-content;">
+                            {{ tag }}
+                            </div>
+                          {% endfor %}
+                        </div>
+                        {% endif %}
                       </div>
                     </div>
                   </div>

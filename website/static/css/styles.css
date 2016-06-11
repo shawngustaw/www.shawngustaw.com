@@ -500,3 +500,10 @@ body .demo-blog {
   background-color: white;
   box-sizing: border-box;
 }
+#tags {
+  margin-top: 10px;
+}
+
+#tags li {
+  display: inline;
+}
