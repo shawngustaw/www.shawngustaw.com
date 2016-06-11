@@ -9,7 +9,7 @@ def get_env_variable(env_var):
         return os.environ[env_var]
     except KeyError:
         error_msg = msg % env_var
-	raise ImproperlyConfigured(error_msg)
+        raise ImproperlyConfigured(error_msg)
 
 
 try:

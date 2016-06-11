@@ -8,7 +8,7 @@
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
           <div class="mdl-card mdl-cell mdl-cell--8-col">
-              <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url({{ header_image.url }})">
+              <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--grey" style="background-image: url({{ header_image.url }})">
                 <h3><a href="{% pageurl blogs.0 %}">{{ blogs.0.title }}</a></h3>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
@@ -22,8 +22,7 @@
 
           <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
               {% if user.is_authenticated %}
-              <!--  TODO:  Get link to parent index and redirect to add new blog page -->
-              <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" onclick="window.open('/admin/pages/add/blog/blogpage/' + {{ self.pk }});"; >
+              <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-button--colored mdl-color--grey mdl-color--accent" onclick="window.open('/admin/pages/add/blog/blogpage/' + {{ self.pk }});"; >
               <i class="material-icons mdl-color-text--white" role="presentation">add</i>
               <span class="visuallyhidden">add</span>
             </button>
