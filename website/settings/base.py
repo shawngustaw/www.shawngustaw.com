@@ -20,11 +20,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 AUTH_USER_MODEL = 'accounts.User'
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -146,6 +141,6 @@ WAGTAIL_SITE_NAME = "shawngustaw"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'http://shawngustaw.com'
 
 BLOG_PAGINATION_PER_PAGE = 5
