@@ -23,9 +23,6 @@ from wagtail.wagtailsnippets.models import register_snippet
 from accounts.models import User
 
 
-COMMENTS_APP = getattr(settings, 'COMMENTS_APP', None)
-
-
 def get_blog_context(context):
     """ Get context data useful on all blog related pages """
     context['authors'] = get_user_model().objects.filter(
@@ -103,7 +100,6 @@ class BlogIndexPage(Page):
         context['tag'] = tag
         context['author'] = author
         context['blog_owner'] = blog_owner
-        context['COMMENTS_APP'] = COMMENTS_APP
         context = get_blog_context(context)
 
         return context
@@ -269,7 +265,7 @@ class BlogPage(Page):
         context = super(BlogPage, self).get_context(request, *args, **kwargs)
         context['blogs'] = self.get_blog_index().blogindexpage.blogs
         context = get_blog_context(context)
-        context['COMMENTS_APP'] = COMMENTS_APP
+        context['disqus_short_name'] = settings.DISQUS_WEBSITE_SHORTNAME
         return context
 
     class Meta:

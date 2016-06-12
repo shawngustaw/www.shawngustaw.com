@@ -37,7 +37,25 @@
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
                 {{ self.body|richtext }} 
             </div>
-          </div>
+            <div>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "{{ request.META.HTTP_HOST }}{{ request.path }}";
+                    this.page.identifier = "{{ self.pk }}";
+                    this.page.title = "{{ self.title }}";
+                };
+
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = '//{{ disqus_short_name }}.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                  </div>
+              </div>
 
           {% if self.get_next_post or self.get_previous_post %}
           <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
@@ -86,5 +104,3 @@
     <a href="https://github.com/google/material-design-lite/blob/master/templates/blog/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">View Source</a>
     <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
 {% endblock %}
-
-<b> YOOOO </b>

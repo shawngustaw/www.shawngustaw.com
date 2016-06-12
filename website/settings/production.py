@@ -2,7 +2,9 @@ from __future__ import absolute_import, unicode_literals
 from django.core.exceptions import ImproperlyConfigured
 from .base import *
 
+
 msg = "%s environment variable was not set."
+
 
 def get_env_variable(env_var):
     try:
@@ -35,6 +37,10 @@ AWS_ACCESS_KEY_ID = get_env_variable("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = get_env_variable("AWS_SECRET_ACCESS_KEY")
 AWS_SES_REGION_NAME = 'us-east-1'
 AWS_SES_REGION_ENDPOINT = 'email.us-east-1.amazonaws.com'
+
+# Disqus
+DISQUS_API_KEY = get_env_variable("DISQUS_API_KEY")
+DISQUS_WEBSITE_SHORTNAME = get_env_variable("DISQUS_SHORT_NAME")
 
 # Increased security for prod
 SECURE_CONTENT_TYPE_NOSNIFF = True
